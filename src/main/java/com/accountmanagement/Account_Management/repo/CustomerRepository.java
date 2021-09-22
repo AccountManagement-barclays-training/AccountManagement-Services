@@ -16,3 +16,4 @@ public interface CustomerRepository extends MongoRepository<Customers, Integer> 
 	// you can build custom queries here
 	
 }
+

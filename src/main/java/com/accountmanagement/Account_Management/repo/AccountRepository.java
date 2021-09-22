@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.accountmanagement.Account_Management.entity.Account;
+import com.accountmanagement.Account_Management.entity.Transaction;
 
 
 
@@ -15,5 +16,7 @@ import com.accountmanagement.Account_Management.entity.Account;
 public interface AccountRepository extends MongoRepository<Account, Integer> {
 
 	// you can build custom queries here
+	@Query(value="{cid:?0}")
+	Account getBalance(String cid);
 	
 }
