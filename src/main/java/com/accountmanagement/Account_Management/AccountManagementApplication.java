@@ -9,21 +9,21 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 @SpringBootApplication
 public class AccountManagementApplication {
-	@Autowired
-	private JavaMailSender javamailsender;
+//	@Autowired
+//	private JavaMailSender javamailsender;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AccountManagementApplication.class, args);
 	}
 	
-	public void sendEmail()
-	{
-		SimpleMailMessage msg = new SimpleMailMessage();
-		msg.setTo("sharrikvk18@gmail.com");
-		msg.setSubject("Test Mail");
-		msg.setText("Testing..");
-		javamailsender.send(msg);
-
-	}
+//	public void sendEmail()
+//	{
+//		SimpleMailMessage msg = new SimpleMailMessage();
+//		msg.setTo("sharrikvk18@gmail.com");
+//		msg.setSubject("Test Mail");
+//		msg.setText("Testing..");
+//		javamailsender.send(msg);
+//
+//	}
 
 }
