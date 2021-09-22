@@ -17,6 +17,11 @@ public class HTransactionController {
 	@Autowired
 	private TransactionService tservice;
 	
+	@GetMapping("/")
+	public String Hello() {
+		return "hello world";
+	}
+	
 	@GetMapping("/deposit")
 	public String deposit(
 			@RequestParam("accno") String accno,
