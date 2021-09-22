@@ -16,5 +16,5 @@
   
 # Things to note when pulling from github
 1. Make sure you close the tabs in eclipse when pulling in terminal, as you'll get a msg saying editor is not closed can't pull
-2. After pulling refresh the project in eclipse, right -click the project -> refresh/reload
+2. After pulling, refresh the project in eclipse, right -click the project -> refresh/reload
   
