@@ -7,8 +7,9 @@ import org.springframework.ui.Model;
 @Controller
 public class LoginController {
 	
-	@GetMapping("/hello")
-	public void helloWorld(Model model) {
-		
+	@GetMapping("/boom")
+	public String helloWorld(Model model) {
+		model.addAttribute("msg", "hello world");
+		return "helloWorld";
 	}
 }
