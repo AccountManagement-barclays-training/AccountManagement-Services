@@ -7,16 +7,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Customers {
 	
 	@Id
-	private long custID;
+	private String custID;
 	private String panNum;
-	private long aadharNum;
+	private String aadharNum;
 	private String custName;
 	private String custAddress;
 	private String custEmail;
 	private String custDOB;
 	
-	public Customers(long custID, String panNum, long aadharNum, String custName, String custAddress, String custEmail,
-			String custDOB) {
+	
+	public Customers(String custID, String panNum, String aadharNum, String custName, String custAddress,
+			String custEmail, String custDOB) {
 		super();
 		this.custID = custID;
 		this.panNum = panNum;
@@ -26,10 +27,10 @@ public class Customers {
 		this.custEmail = custEmail;
 		this.custDOB = custDOB;
 	}
-	public long getCustID() {
+	public String getCustID() {
 		return custID;
 	}
-	public void setCustID(long custID) {
+	public void setCustID(String custID) {
 		this.custID = custID;
 	}
 	public String getPanNum() {
@@ -38,10 +39,10 @@ public class Customers {
 	public void setPanNum(String panNum) {
 		this.panNum = panNum;
 	}
-	public long getAadharNum() {
+	public String getAadharNum() {
 		return aadharNum;
 	}
-	public void setAadharNum(long aadharNum) {
+	public void setAadharNum(String aadharNum) {
 		this.aadharNum = aadharNum;
 	}
 	public String getCustName() {
@@ -68,6 +69,5 @@ public class Customers {
 	public void setCustDOB(String custDOB) {
 		this.custDOB = custDOB;
 	}
-	
-
 }
+	

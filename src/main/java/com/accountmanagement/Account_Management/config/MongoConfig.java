@@ -1,5 +1,6 @@
 package com.accountmanagement.Account_Management.config;
 import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -24,6 +25,8 @@ public class MongoConfig {
 		
 	return null;
 	}
+	
+	
 
 }
 
