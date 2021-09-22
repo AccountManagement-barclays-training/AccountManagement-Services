@@ -2,7 +2,7 @@
 
 ## How to contribute:
 1. Create a folder in your local system
-2. git clone the project
+2. git clone "https://github.com/AccountManagement-barclays-training/AccountManagement-Services.git"
 3. cd AccountManagement-Services
 4. git branch yourname-branch
 5. git checkout yourname-branch
