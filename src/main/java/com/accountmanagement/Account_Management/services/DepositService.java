@@ -22,7 +22,7 @@ public class DepositService implements IDepositService{
 			double bal=account.getBalance();
 			account.setBalance(bal+amt);
 			repo.save(account);
-			return "Updated successfully";
+			return "Deposited Rs."+amt+" successfully\n to account: "+accno;
 		}
 		catch(Exception e) {
 			System.out.println("Error in Deposit Service class\n: "+e.getMessage());
@@ -43,6 +43,25 @@ public class DepositService implements IDepositService{
 			
 			return null;
 		}
+	}
+
+	@Override
+	public String withdraw(String accno, double amt) {
+		try{
+			Account account=repo.getAccount(accno);
+			double bal=account.getBalance();
+			if(amt>bal) {
+				return "Insufficient Balance";
+			}
+			account.setBalance(bal-amt);
+			repo.save(account);
+			return "Withdrawal successfull";
+		}
+		catch(Exception e) {
+			System.out.println("Error in Withdraw Service class\n: "+e.getMessage());
+			
+			return "Error";
+		}	
 	}
 
 }
