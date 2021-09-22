@@ -14,6 +14,7 @@ import com.accountmanagement.Account_Management.entity.Account;
 @Repository
 public interface AccountRepository extends MongoRepository<Account, Integer> {
 
-	// you can build custom queries here
+	@Query(value="{'_id':?0}")
+	Account getAccount(String accno);	
 	
 }
