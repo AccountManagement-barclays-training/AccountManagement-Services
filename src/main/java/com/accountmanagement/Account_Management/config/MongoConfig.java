@@ -7,18 +7,18 @@ import com.accountmanagement.Account_Management.entity.*;
 import com.accountmanagement.Account_Management.repo.*;
 
 @Configuration
-@EnableMongoRepositories(basePackageClasses = CustomerRepository.class)
+@EnableMongoRepositories(basePackageClasses = {CustomerRepository.class,TransactionRepo.class,AccountRepository.class, UsersRepo.class})
 public class MongoConfig {
 	
 	@Bean
-	public CommandLineRunner commandLineRunner(CustomerRepository repo) {
+	public CommandLineRunner commandLineRunner(CustomerRepository repo,TransactionRepo repo_trans,AccountRepository repo_acnt, UsersRepo userrepo) {
 	
 
-    return string -> { 
-    	repo.insert(new Customers(1023457312,"ABCDE34521",1944023411,"Abinaya","Chennai","abcde123@gmail.com","12/07/2000"));
-    	};	
+//    return string -> { 
+//    	userrepo.insert(new Users(110,"abcd","customer"));
+//    	};	
 		
-	//return null;
+	return null;
 	}
 
 }
