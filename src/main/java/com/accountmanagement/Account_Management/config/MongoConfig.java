@@ -12,16 +12,16 @@ import com.accountmanagement.Account_Management.repo.*;
 public class MongoConfig {
 	
 	@Bean
-	public CommandLineRunner commandLineRunner(CustomerRepository repo,AccountRepository accRepo) {
+	public CommandLineRunner commandLineRunner(CustomerRepository repo,AccountRepository accRepo,UsersRepo userrepo ) {
 	
 
-//    return string -> { 
+   //return string -> { 
 //    	//repo.insert(new Customers(1023457312,"ABCDE34521",1944023411,"Abinaya","Chennai","abcde123@gmail.com","12/07/2000"));
 //    	accRepo.insert(new Account("102","200",30000.0));
-//            	//userrepo.insert(new Users(110,"abcd","customer"));
+        // userrepo.insert(new Users(110,"abcd","customer"));
 //    	
 //    	
-//   	};	    	
+ //  	};	    	
 		
 		return null;
 	}

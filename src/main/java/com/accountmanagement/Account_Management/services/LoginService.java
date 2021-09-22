@@ -1,4 +1,4 @@
-package com.accountmanagement.Account_Management.service;
+package com.accountmanagement.Account_Management.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,3 +29,4 @@ public class LoginService implements IService {
 }
 
 }
+

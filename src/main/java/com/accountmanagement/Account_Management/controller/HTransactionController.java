@@ -2,10 +2,13 @@ package com.accountmanagement.Account_Management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accountmanagement.Account_Management.entity.Account;
+import com.accountmanagement.Account_Management.entity.Customers;
 import com.accountmanagement.Account_Management.services.*;
 
 @RestController
@@ -16,6 +19,12 @@ public class HTransactionController {
 	
 	@Autowired
 	private TransactionService tservice;
+	
+	@Autowired
+	private CustomerService cservice;
+	
+	@Autowired
+	private LoginService iservice;
 	
 	@GetMapping("/")
 	public String Hello() {
@@ -58,6 +67,16 @@ public class HTransactionController {
 		
 	}
 	
+	@PostMapping("/customer")
+	public String newCustomer(@RequestBody Customers c)
+	{
+		return cservice.insertCustomer(c);
+	}
 	
+	@GetMapping("/customerLogin")
+	public String customerLogin(@RequestParam("userid") int uid,
+			@RequestParam("pwd") String pwd) {
+		return iservice.customerLogin(uid, pwd);
+	}
 
 }
