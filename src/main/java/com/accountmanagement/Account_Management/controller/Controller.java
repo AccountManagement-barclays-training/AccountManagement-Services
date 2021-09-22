@@ -2,10 +2,14 @@ package com.accountmanagement.Account_Management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.accountmanagement.Account_Management.contract.IService;
 
 import com.accountmanagement.Account_Management.contract.IAccountService;
 import com.accountmanagement.Account_Management.entity.Account;
@@ -17,12 +21,17 @@ import com.accountmanagement.Account_Management.entity.Transaction;
 @RestController
 public class Controller {
 	
-	@Autowired
-	private IAccountService service; 
+private IService service; 
+
 	
 	@GetMapping("/")
-	public String hello() {
-		return "Hello world";
+	public String Hello() {
+		return "hello world";
+	}
+	
+	@GetMapping("/login")
+	public String customerLogin(@RequestParam("userid") int userid, @RequestParam("pwd") String pwd) {		
+		return service.customerLogin(userid, pwd);
 	}
 	
 	/*@PostMapping("/cashdeposit")

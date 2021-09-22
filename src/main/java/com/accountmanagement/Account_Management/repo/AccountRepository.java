@@ -13,14 +13,15 @@ import com.accountmanagement.Account_Management.entity.Account;
 
 @Repository
 public interface AccountRepository extends MongoRepository<Account, Integer> {
-
-	// you can build custom queries here
-/* @Query("{cid: ?1, accno: ?2}")
- Account getBalance(String cid,String accno);*/
+// 	// you can build custom queries here
+// /* @Query("{cid: ?1, accno: ?2}")
+//  Account getBalance(String cid,String accno);*/
  
 
-	@Query(value="{cid:?0}")
-	Account getBalance(String cid);
-	
+// 	@Query(value="{cid:?0}")
+// 	Account getBalance(String cid);
+
+	@Query(value="{'_id':?0}")
+	Account getAccount(String accno);	
 
 }

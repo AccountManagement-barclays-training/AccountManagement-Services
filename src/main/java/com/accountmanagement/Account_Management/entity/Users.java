@@ -5,19 +5,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Users {
 	@Id
-	String uid;
-	String pwd,role;
+	int userid;
+	String pwd = " ",role;
 	
 	Users(){
 		
 	}
-
-	public String getUid() {
-		return uid;
+	public Users(int userid, String pwd, String role)
+	{
+		this.userid = userid;
+		this.pwd = pwd;
+		this.role = role;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int uid) {
+		this.userid = uid;
 	}
 
 	public String getPwd() {
