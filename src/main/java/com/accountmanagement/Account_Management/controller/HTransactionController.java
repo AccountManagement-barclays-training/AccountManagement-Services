@@ -61,6 +61,7 @@ public class HTransactionController {
 	public Account getAccInfo(
 			@RequestParam("accno") String accno) {
 		
+		
 		return service.getAccountInfo(accno);
 		
 	}
@@ -75,7 +76,17 @@ public class HTransactionController {
 	}
 	
 	@GetMapping("/moneyTransfer")
-	public String deposit(
+	public String moneyTransfer(
+			@RequestParam("accno1") String accno1,
+			@RequestParam("accno2") String accno2,
+			@RequestParam("amt") double amt) {
+		
+		return tservice.transferMoney(accno1, accno2, amt);
+		
+	}
+	
+	@GetMapping("/transfer")
+	public String transferUi(
 			@RequestParam("accno1") String accno1,
 			@RequestParam("accno2") String accno2,
 			@RequestParam("amt") double amt) {

@@ -1,5 +1,7 @@
 package com.accountmanagement.Account_Management.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +64,18 @@ public class DepositService implements IDepositService{
 			
 			return "Error";
 		}	
+	}
+
+	@Override
+	public List<Account> getAllAccounts() {
+		try {
+			return repo.findAll();
+		}
+		catch(Exception e) {
+			System.out.println("Error in Deposit Service class\n: "+e.getMessage());
+			
+			return null;
+		}
 	}
 
 }

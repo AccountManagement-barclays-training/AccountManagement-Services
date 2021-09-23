@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>View Accounts</title>
+		<link rel="stylesheet" href="@{/css/style/cuslogstyle.css}">
+</head>
+	<body>
+	
+
+		<div class="wrapper fadeInDown">
+			<div id="formContent">
+			<u><h1 style="text-align: center;font-size: 30px;font-family:'Times New Roman', Times, serif;">Your Account Details</h1></u>
+			<br>
+			<!-- Table to display fetched user data -->
+			<p style="text-align: justify; font-size: 30px;" id="users"> </p>
+		  
+		  
+		  	<form action="/findAccno"> 
+		  	<input name="accno" type="text" id="accno" placeholder="Enter Acc No for View"/>
+		  	<br>
+		  <input type="submit" value="Get Account Info"></button>
+		  <br><a href="/findAllAccno">Click here to get all Accounts Details</a>
+		
+		 </div>
+		</div>
+	</body>
+</html>

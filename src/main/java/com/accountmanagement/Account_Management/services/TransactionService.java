@@ -26,6 +26,7 @@ public class TransactionService implements IMoneyTransaction {
 				return "Money transferred from Account: "+accno1+" to Account: "+accno2;
 			}
 			else {
+				service.deposit(accno1, amt);
 				return "Account: "+accno2+" does not exist";
 			}
 		}
