@@ -1,6 +1,7 @@
 package com.accountmanagement.Account_Management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Random;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,22 @@ public class HTransactionController {
 	@GetMapping("/")
 	public String Hello() {
 		return "hello world";
+	}
+	
+	@GetMapping("/newCustomer1")
+	public String newCustomer(
+			@RequestParam("name") String name,
+			@RequestParam("pan") String pan,
+			@RequestParam("aadhar") String aadhar,
+			@RequestParam("address") String address,
+			@RequestParam("email") String email,
+			@RequestParam("dob") String dob) {
+		
+		int max=1000;
+		int min=100;
+		int custId=(int)(Math.random()*(max-min+1)+min);  
+		return cservice.insertCustomer(new Customers(custId,pan,aadhar,name,address,email,dob));
+		
 	}
 	
 	@GetMapping("/deposit")
@@ -75,6 +92,12 @@ public class HTransactionController {
 	
 	@GetMapping("/customerLogin")
 	public String customerLogin(@RequestParam("userid") int uid,
+			@RequestParam("pwd") String pwd) {
+		return iservice.customerLogin(uid, pwd);
+	}
+	
+	@GetMapping("/save")
+	public String customerLogin2(@RequestParam("userid") int uid,
 			@RequestParam("pwd") String pwd) {
 		return iservice.customerLogin(uid, pwd);
 	}
