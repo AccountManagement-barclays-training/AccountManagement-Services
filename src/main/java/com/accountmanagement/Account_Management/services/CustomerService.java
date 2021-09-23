@@ -13,6 +13,7 @@ public class CustomerService implements IAccountService{
 	@Autowired
 	private CustomerRepository cust_repo;
 	
+	@Override
 	public String insertCustomer(Customers c) {
 
 		cust_repo.save(c);

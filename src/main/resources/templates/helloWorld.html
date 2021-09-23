@@ -6,25 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <title> Login Page </title>  
 <script type="text/javascript" src="@{/js/script.js}"></script>
-<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" href="@{css/cuslogstyle.css}">
 <style>   
 </style>
 
 
 </head>    
 <body> 
-    <center>   
-    <h1> CUSTOMER LOGIN  </h1>
+      
     
-    <form>  
+    <div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <img src="mainbuilding.jpg" id="icon" alt="User Icon" />
+          </div>
+        <h1> CUSTOMER LOGIN  </h1>
+               
+         <form action="/save">
+         	<input name="userid" type="text" class="fadeIn second" placeholder="Enter Customer ID" id="cid" required/>  <br>
            
-            <label>Customer ID : </label>   
-            <input type="text" placeholder="Enter Customer ID" id="cid" required/>  <br>
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" id="password" required/> <br><br>
-            
-           <br> <button type="submit" onclick="validateCus(event)">Login</button>           
-    </form> 
-</center> 
+         	<input name="pwd" type="password" class="fadeIn third" placeholder="Enter Password" id="password" required/> <br><br>
+         
+       		<br> <input type="submit" class="fadeIn fourth">
+         </form>
+                       
+    
+    </div>
+    </div>
 </body>     
 </html>  

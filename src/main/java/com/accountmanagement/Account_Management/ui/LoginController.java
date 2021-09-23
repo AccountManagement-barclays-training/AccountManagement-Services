@@ -12,4 +12,16 @@ public class LoginController {
 		model.addAttribute("msg", "hello world");
 		return "helloWorld";
 	}
+	
+	@GetMapping("/newCustomer")
+	public String newCustomer(Model model) {
+		model.addAttribute("msg", "hello world");
+		return "newCustomer";
+	}
+	
+	@GetMapping("/accountTransfer")
+	public String transfer(Model model) {
+		model.addAttribute("msg", "hello world");
+		return "accountTransfer";
+	}
 }
