@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <title> Login Page </title>  
 <script type="text/javascript" src="@{/js/script.js}"></script>
-<link rel="stylesheet" href="@{/css/cuslogstyle.css}">
+<link rel="stylesheet" th:href="@{/css/cuslogstyle.css}">
 <style>   
 </style>
 
@@ -18,7 +18,7 @@
     <div class="wrapper fadeInDown">
     <div id="formContent">
         <div class="fadeIn first">
-            <img src="mainbuilding.jpg" id="icon" alt="User Icon" />
+            <img src="@{/img/mainbuilding.jpg}" id="icon" alt="User Icon" />
           </div>
         <h1> CUSTOMER LOGIN  </h1>
                
